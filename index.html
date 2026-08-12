@@ -1,38 +1,1205 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Resume</title>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Mohitha Sannareddy Reddy - Student Portfolio, Web Developer and Computer Science Student">
+
+    <meta name="keywords"
+          content="Mohitha Reddy, student portfolio, web developer, education management system, HTML CSS JavaScript">
+
+    <meta name="author" content="Mohitha Sannareddy Reddy">
+
+    <title>Mohitha Reddy | Student Portfolio</title>
+
+    <style>
+
+            
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #eeeeee;
+            color: #333333;
+            line-height: 1.6;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+
+        header {
+            background: #202a44;
+            padding: 18px 8%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .logo span {
+            color: #ffb703;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffb703;
+        }
+
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 70px 8%;
+            gap: 50px;
+            background: #eeeeee;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 52px;
+            color: #202a44;
+            margin-bottom: 15px;
+        }
+
+        .hero-text h1 span {
+            color: #e76f51;
+        }
+
+        .hero-text h2 {
+            color: #2a9d8f;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            max-width: 650px;
+            margin-bottom: 25px;
+            color: #555;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .primary-btn {
+            background: #e76f51;
+            color: white;
+        }
+
+        .primary-btn:hover {
+            background: #c9573b;
+            transform: translateY(-3px);
+        }
+
+        .secondary-btn {
+            background: #2a9d8f;
+            color: white;
+        }
+
+        .secondary-btn:hover {
+            background: #21867a;
+            transform: translateY(-3px);
+        }
+
+        .hero-image {
+            flex: 0 0 320px;
+        }
+
+        .hero-image img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 8px solid #2a9d8f;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        /* =========================
+           COMMON SECTION
+        ========================== */
+
+        section {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: #202a44;
+            margin-bottom: 10px;
+        }
+
+        .section-title h2::after {
+            content: "";
+            width: 70px;
+            height: 4px;
+            background: #e76f51;
+            display: block;
+            margin: 10px auto;
+            border-radius: 5px;
+        }
+
+        .section-title p {
+            color: #666;
+        }
+
+        /* =========================
+           ABOUT
+        ========================== */
+
+        .about {
+            background: #f5f5f5;
+        }
+
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-image {
+            flex: 1;
+        }
+
+        .about-image img {
+            width: 100%;
+            max-width: 450px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .about-content {
+            flex: 1;
+        }
+
+        .about-content h3 {
+            color: #2a9d8f;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .about-content p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        /* =========================
+           SKILLS
+        ========================== */
+
+        .skills {
+            background: #eeeeee;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+        }
+
+        .skill-card h3 {
+            color: #e76f51;
+            margin-bottom: 10px;
+        }
+
+        .skill-card p {
+            color: #666;
+        }
+
+        /* =========================
+           STRENGTHS
+        ========================== */
+
+        .strengths {
+            background: #f5f5f5;
+        }
+
+        .strength-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .strength-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid #2a9d8f;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .strength-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .strength-card h3 {
+            color: #202a44;
+            margin-bottom: 10px;
+        }
+
+        .strength-card p {
+            color: #666;
+        }
+
+        /* =========================
+           PROJECTS
+        ========================== */
+
+        .projects {
+            background: #eeeeee;
+        }
+
+        .project-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 7px 20px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-content h3 {
+            color: #e76f51;
+            margin-bottom: 12px;
+            font-size: 24px;
+        }
+
+        .project-content p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .tech {
+            background: #e8f5f3;
+            color: #2a9d8f;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        /* =========================
+           EDUCATION
+        ========================== */
+
+        .education {
+            background: #f5f5f5;
+        }
+
+        .education-container {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .education-card {
+            background: white;
+            padding: 30px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            border-left: 5px solid #e76f51;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .education-card h3 {
+            color: #202a44;
+            margin-bottom: 8px;
+        }
+
+        .education-card h4 {
+            color: #2a9d8f;
+            margin-bottom: 8px;
+        }
+
+        .education-card p {
+            color: #666;
+        }
+
+        /* =========================
+           GALLERY
+        ========================== */
+
+        .gallery {
+            background: #eeeeee;
+        }
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-container img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            border-radius: 15px;
+            transition: 0.3s;
+        }
+
+        .gallery-container img:hover {
+            transform: scale(1.04);
+        }
+
+        /* =========================
+           CONTACT
+        ========================== */
+
+        .contact {
+            background: #202a44;
+            color: white;
+        }
+
+        .contact .section-title h2 {
+            color: white;
+        }
+
+        .contact .section-title p {
+            color: #ddd;
+        }
+
+        .contact-container {
+            max-width: 700px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .contact-box {
+            background: #2d3958;
+            padding: 20px;
+            border-radius: 12px;
+            min-width: 200px;
+        }
+
+        .contact-box h3 {
+            color: #ffb703;
+            margin-bottom: 5px;
+        }
+
+        .contact-box p {
+            color: #ddd;
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            background: #151c2d;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer span {
+            color: #ffb703;
+        }
+
+        /* =========================
+           RESPONSIVE DESIGN
+        ========================== */
+
+        @media (max-width: 900px) {
+
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .about-container {
+                flex-direction: column;
+            }
+
+            .skills-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .strength-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .project-container {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            nav ul {
+                gap: 12px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            header {
+                padding: 15px 5%;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero-text h1 {
+                font-size: 38px;
+            }
+
+            .hero-text h2 {
+                font-size: 22px;
+            }
+
+            .hero-image img {
+                width: 230px;
+                height: 230px;
+            }
+
+            section {
+                padding: 60px 5%;
+            }
+
+            .skills-container,
+            .strength-container,
+            .gallery-container {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title h2 {
+                font-size: 30px;
+            }
+        }
+
+    </style>
 </head>
 
 <body>
 
-    <h1>my name is mohitha</h1>
-    <p>mohitha@gmail.com</p>
-    <p>0123245566</p>
+<!-- =========================
+     NAVIGATION
+========================== -->
 
-    <h2>Career Objective</h2>
+<header>
+
+    <nav>
+
+        <div class="logo">
+            Mohitha<span>.</span>
+        </div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#strengths">Strengths</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+    </nav>
+
+</header>
+
+
+<!-- =========================
+     HOME
+========================== -->
+
+<section class="hero" id="home">
+
+    <div class="hero-text">
+
+        <h1>Hello, I'm <span>Mohitha</span></h1>
+
+        <h2>Computer Science Student & Aspiring Developer</h2>
+
+        <p>
+            Welcome to my personal portfolio. I am a passionate Computer Science
+            student interested in software development, web technologies,
+            data structures and problem solving. I enjoy learning new
+            technologies and creating useful projects.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#projects" class="btn primary-btn">
+                View My Projects
+            </a>
+
+            <a href="#contact" class="btn secondary-btn">
+                Contact Me
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<section class="about" id="about">
+
+    <div class="section-title">
+
+        <h2>About Me</h2>
+
+        <p>Know more about me and my interests</p>
+
+    </div>
+
+
+    <div class="about-container">
+
+        <div class="about-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80"
+                alt="Computer science student working on laptop">
+
+        </div>
+
+
+        <div class="about-content">
+
+            <h3>Who Am I?</h3>
+
+            <p>
+                I am a Computer Science student who is interested in technology
+                and software development. I enjoy understanding how applications
+                work and developing projects that solve real-world problems.
+            </p>
+
+            <p>
+                My learning journey includes programming, data structures,
+                web development, database concepts and problem solving.
+                I continuously practice coding and explore new technologies
+                to improve my technical skills.
+            </p>
+
+            <p>
+                My goal is to become a skilled software developer and contribute
+                to meaningful technology projects while continuously learning
+                and improving myself.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SKILLS
+========================== -->
+
+<section class="skills" id="skills">
+
+    <div class="section-title">
+
+        <h2>My Skills</h2>
+
+        <p>Technologies and concepts I am learning</p>
+
+    </div>
+
+
+    <div class="skills-container">
+
+        <div class="skill-card">
+            <h3>HTML</h3>
+            <p>Creating structured and semantic web pages.</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>CSS</h3>
+            <p>Designing responsive and attractive websites.</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>JavaScript</h3>
+            <p>Adding interactivity and functionality to websites.</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Python</h3>
+            <p>Programming, problem solving and application development.</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>C Programming</h3>
+            <p>Understanding algorithms, pointers and data structures.</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Data Structures</h3>
+            <p>Arrays, linked lists, stacks, queues, trees and graphs.</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Git & GitHub</h3>
+            <p>Managing code and maintaining projects using GitHub.</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Problem Solving</h3>
+            <p>Developing logical thinking through coding practice.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     STRENGTHS
+========================== -->
+
+<section class="strengths" id="strengths">
+
+    <div class="section-title">
+
+        <h2>My Strengths</h2>
+
+        <p>Qualities that help me grow as a developer</p>
+
+    </div>
+
+
+    <div class="strength-container">
+
+        <div class="strength-card">
+
+            <h3>💡 Quick Learner</h3>
+
+            <p>
+                I enjoy learning new concepts and technologies and try to
+                apply what I learn through practical projects.
+            </p>
+
+        </div>
+
+
+        <div class="strength-card">
+
+            <h3>🧠 Problem Solving</h3>
+
+            <p>
+                I like solving programming problems and improving my logical
+                and analytical thinking.
+            </p>
+
+        </div>
+
+
+        <div class="strength-card">
+
+            <h3>🤝 Teamwork</h3>
+
+            <p>
+                I can work effectively with others, share ideas and contribute
+                to team projects.
+            </p>
+
+        </div>
+
+
+        <div class="strength-card">
+
+            <h3>🎯 Goal Oriented</h3>
+
+            <p>
+                I set learning goals and consistently work towards improving
+                my technical knowledge.
+            </p>
+
+        </div>
+
+
+        <div class="strength-card">
+
+            <h3>🔍 Curiosity</h3>
+
+            <p>
+                I enjoy exploring how technology works and experimenting with
+                new ideas.
+            </p>
+
+        </div>
+
+
+        <div class="strength-card">
+
+            <h3>🚀 Creativity</h3>
+
+            <p>
+                I like creating websites and projects that are useful,
+                simple and visually appealing.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PROJECTS
+========================== -->
+
+<section class="projects" id="projects">
+
+    <div class="section-title">
+
+        <h2>My Projects</h2>
+
+        <p>Some of the projects I have worked on</p>
+
+    </div>
+
+
+    <div class="project-container">
+
+
+        <!-- PROJECT 1 -->
+
+        <div class="project-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=80"
+                alt="Education Management System">
+
+            <div class="project-content">
+
+                <h3>Education Management System</h3>
+
+                <p>
+                    An Education Management System designed to simplify
+                    the management of students, courses and educational
+                    information. The project focuses on creating an organized
+                    platform where educational information can be managed
+                    efficiently.
+                </p>
+
+                <div class="project-tech">
+
+                    <span class="tech">HTML</span>
+                    <span class="tech">CSS</span>
+                    <span class="tech">JavaScript</span>
+                    <span class="tech">GitHub</span>
+
+                </div>
+
+                <a
+                    href="https://github.com/mohithasannareddy"
+                    target="_blank"
+                    class="btn primary-btn">
+                    View on GitHub
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- PROJECT 2 -->
+
+        <div class="project-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=900&q=80"
+                alt="Web Development Project">
+
+            <div class="project-content">
+
+                <h3>Personal Portfolio Website</h3>
+
+                <p>
+                    A responsive personal portfolio website created to
+                    showcase my skills, projects, education and interests.
+                    The website uses a clean design and responsive layout
+                    for different screen sizes.
+                </p>
+
+                <div class="project-tech">
+
+                    <span class="tech">HTML5</span>
+                    <span class="tech">CSS3</span>
+                    <span class="tech">JavaScript</span>
+                    <span class="tech">Responsive Design</span>
+
+                </div>
+
+                <a
+                    href="https://github.com/mohithasannareddy"
+                    target="_blank"
+                    class="btn secondary-btn">
+                    GitHub
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- PROJECT 3 -->
+
+        <div class="project-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80"
+                alt="Programming project">
+
+            <div class="project-content">
+
+                <h3>Programming & DSA Projects</h3>
+
+                <p>
+                    A collection of programming exercises and data structure
+                    implementations created while learning algorithms,
+                    linked lists, stacks, queues, sorting techniques and
+                    problem-solving concepts.
+                </p>
+
+                <div class="project-tech">
+
+                    <span class="tech">C</span>
+                    <span class="tech">Python</span>
+                    <span class="tech">DSA</span>
+                    <span class="tech">Algorithms</span>
+
+                </div>
+
+                <a
+                    href="https://github.com/mohithasannareddy"
+                    target="_blank"
+                    class="btn primary-btn">
+                    View GitHub
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- PROJECT 4 -->
+
+        <div class="project-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=900&q=80"
+                alt="Technology project">
+
+            <div class="project-content">
+
+                <h3>Web Development Projects</h3>
+
+                <p>
+                    Various frontend projects created while learning modern
+                    web development. These projects helped me improve my
+                    understanding of layouts, responsive design, navigation,
+                    forms and user experience.
+                </p>
+
+                <div class="project-tech">
+
+                    <span class="tech">Frontend</span>
+                    <span class="tech">HTML</span>
+                    <span class="tech">CSS</span>
+                    <span class="tech">JavaScript</span>
+                     <span class="tech">c programming</span>
+
+                </div>
+
+                <a
+                    href="https://github.com/mohithasannareddy"
+                    target="_blank"
+                    class="btn secondary-btn">
+                    Explore GitHub
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+<section class="education" id="education">
+
+    <div class="section-title">
+
+        <h2>Education</h2>
+
+        <p>My academic journey</p>
+
+    </div>
+
+
+    <div class="education-container">
+
+        <div class="education-card">
+
+            <h3>Computer Science</h3>
+
+            <h4>Sai University</h4>
+
+            <p>
+                Currently pursuing my undergraduate studies in Computer Science.
+                My academic learning includes programming, data structures,
+                algorithms, mathematics, databases and web technologies.
+            </p>
+
+        </div>
+
+
+        <div class="education-card">
+
+            <h3>Technical Learning</h3>
+
+            <h4>Programming & Development</h4>
+
+            <p>
+                Along with academics, I am developing practical skills through
+                coding practice, personal projects, GitHub repositories and
+                web development activities and i am trying to do my intenships
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<section class="gallery">
+
+    <div class="section-title">
+
+        <h2>My Learning Journey</h2>
+
+        <p>Technology, coding and learning</p>
+
+    </div>
+
+
+    <div class="gallery-container">
+
+        <img
+            src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=800&q=80"
+            alt="Programming code">
+
+        <img
+            src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80"
+            alt="Web development">
+
+        <img
+            src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80"
+            alt="Team project">
+
+        <img
+            src="https://images.unsplash.com/photo-1516321165247-4aa89a48be28?auto=format&fit=crop&w=800&q=80"
+            alt="Computer learning">
+
+
+    </div>
+
+</section>
+
+
+
+
+<section class="contact" id="contact">
+
+    <div class="section-title">
+
+        <h2>Contact Me</h2>
+
+        <p>Let's connect and build something interesting</p>
+
+    </div>
+
+
+    <div class="contact-container">
+
+        <p>
+            I am always interested in learning, collaborating on projects
+            and exploring new opportunities in technology and software
+            development.
+        </p>
+
+
+        <div class="contact-info">
+
+            <div class="contact-box">
+
+                <h3>Email</h3>
+
+                <p>ymohitha@gmail.com</p>
+
+            </div>
+
+
+            <div class="contact-box">
+
+                <h3>GitHub</h3>
+
+                <p>mohithasannareddy</p>
+
+            </div>
+
+        </div>
+
+
+        <a
+            href="https://github.com/mohithasannareddy"
+            target="_blank"
+            class="btn primary-btn">
+            Visit My GitHub
+        </a>
+
+    </div>
+
+</section>
+
+
+
+
+<footer>
+
     <p>
-        I am a hardworking and motivated student looking for
-        an opportunity to develop my skills.
+        © 2026 <span>Mohitha Reddy</span>.
+        All Rights Reserved.
     </p>
 
-    <h2>Education</h2>
-    <p>i am studying btech in sai university</p>
+    <p>
+        Designed and developed with passion for technology.
+    </p>
 
-    <h2>Skills</h2>
-    <ul>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-        <li>Python</li>
-    </ul>
+</footer>
 
-    <h2>Projects</h2>
-    <h3>Portfolio Website</h3>
-    <p>Created a simple personal portfolio website using HTML.</p>
-
-    <h2>Contact</h2>
-    <p>mohitha@gmail.com</p>
 
 </body>
 </html>
